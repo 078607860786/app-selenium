@@ -22,7 +22,7 @@ public class LoginPage{
 	}
 
 	
-//	Enter Username && Password
+//	Enter Username && Password for login
 	@Test(priority=1)
 	public void credentialsLoginPage() {
 //		//Enter Username
