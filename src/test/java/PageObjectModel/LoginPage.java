@@ -36,13 +36,6 @@ public class LoginPage{
 //		//ClickloginBtn
 		SingletonDriver.driver.findElement(By.id("login-btn")).click(); 
 		log.info("Click LoginButton");
-		
-	
-		;
-
-
-
-		
 	}
 	
 }
