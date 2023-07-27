@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Eccountant_ERP_Software by packages]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="PageObjectModel(failed)">
+    <classes>
+      <class name="PageObjectModel.LoginPage">
+        <methods>
+          <include name="credentialsLoginPage"/>
+          <include name="h"/>
+        </methods>
+      </class> <!-- PageObjectModel.LoginPage -->
+    </classes>
+  </test> <!-- PageObjectModel(failed) -->
+</suite> <!-- Failed suite [Eccountant_ERP_Software by packages] -->
