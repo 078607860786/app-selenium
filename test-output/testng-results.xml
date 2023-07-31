@@ -2,52 +2,52 @@
 <testng-results ignored="5" total="12" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-27T13:36:18 PKT" name="Suite" finished-at="2023-07-27T13:38:18 PKT" duration-ms="120136">
+  <suite started-at="2023-07-31T15:11:24 PKT" name="Suite" finished-at="2023-07-31T15:13:35 PKT" duration-ms="131067">
     <groups>
     </groups>
-    <test started-at="2023-07-27T13:36:18 PKT" name="Test" finished-at="2023-07-27T13:38:18 PKT" duration-ms="120136">
+    <test started-at="2023-07-31T15:11:24 PKT" name="Test" finished-at="2023-07-31T15:13:35 PKT" duration-ms="131067">
       <class name="PageObjectModel.LoginPage">
-        <test-method is-config="true" signature="h()[pri:0, instance:PageObjectModel.LoginPage@665e9289]" started-at="2023-07-27T13:36:31 PKT" name="h" finished-at="2023-07-27T13:36:31 PKT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="h()[pri:0, instance:PageObjectModel.LoginPage@511f5b1d]" started-at="2023-07-31T15:11:30 PKT" name="h" finished-at="2023-07-31T15:11:30 PKT" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- h -->
-        <test-method signature="credentialsLoginPage()[pri:1, instance:PageObjectModel.LoginPage@665e9289]" started-at="2023-07-27T13:36:34 PKT" name="credentialsLoginPage" finished-at="2023-07-27T13:36:41 PKT" duration-ms="6892" status="PASS">
+        <test-method signature="credentialsLoginPage()[pri:1, instance:PageObjectModel.LoginPage@511f5b1d]" started-at="2023-07-31T15:11:33 PKT" name="credentialsLoginPage" finished-at="2023-07-31T15:11:39 PKT" duration-ms="5952" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- credentialsLoginPage -->
       </class> <!-- PageObjectModel.LoginPage -->
       <class name="PageObjectModel.Main">
-        <test-method is-config="true" signature="h()[pri:0, instance:PageObjectModel.Main@6b54655f]" started-at="2023-07-27T13:36:31 PKT" name="h" finished-at="2023-07-27T13:36:31 PKT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="h()[pri:0, instance:PageObjectModel.Main@17043b04]" started-at="2023-07-31T15:11:30 PKT" name="h" finished-at="2023-07-31T15:11:30 PKT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- h -->
-        <test-method signature="url()[pri:0, instance:PageObjectModel.Main@6b54655f]" started-at="2023-07-27T13:36:31 PKT" name="url" finished-at="2023-07-27T13:36:34 PKT" duration-ms="2544" status="PASS">
+        <test-method signature="url()[pri:0, instance:PageObjectModel.Main@17043b04]" started-at="2023-07-31T15:11:30 PKT" name="url" finished-at="2023-07-31T15:11:33 PKT" duration-ms="3214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- url -->
       </class> <!-- PageObjectModel.Main -->
       <class name="Sales_Module.DeliveryOrder">
-        <test-method is-config="true" signature="h()[pri:0, instance:Sales_Module.DeliveryOrder@7d3430a7]" started-at="2023-07-27T13:36:18 PKT" name="h" finished-at="2023-07-27T13:36:31 PKT" duration-ms="13095" status="PASS">
+        <test-method is-config="true" signature="h()[pri:0, instance:Sales_Module.DeliveryOrder@31f295b6]" started-at="2023-07-31T15:11:24 PKT" name="h" finished-at="2023-07-31T15:11:30 PKT" duration-ms="5475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- h -->
-        <test-method signature="deliveryOrder_add_page()[pri:3, instance:Sales_Module.DeliveryOrder@7d3430a7]" started-at="2023-07-27T13:36:41 PKT" name="deliveryOrder_add_page" finished-at="2023-07-27T13:37:27 PKT" duration-ms="45828" status="PASS">
+        <test-method signature="deliveryOrder_add_page()[pri:3, instance:Sales_Module.DeliveryOrder@31f295b6]" started-at="2023-07-31T15:11:39 PKT" name="deliveryOrder_add_page" finished-at="2023-07-31T15:12:34 PKT" duration-ms="54491" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deliveryOrder_add_page -->
-        <test-method signature="deliveryOrder_view_page()[pri:4, instance:Sales_Module.DeliveryOrder@7d3430a7]" started-at="2023-07-27T13:37:27 PKT" name="deliveryOrder_view_page" finished-at="2023-07-27T13:37:28 PKT" duration-ms="1621" status="PASS">
+        <test-method signature="deliveryOrder_view_page()[pri:4, instance:Sales_Module.DeliveryOrder@31f295b6]" started-at="2023-07-31T15:12:34 PKT" name="deliveryOrder_view_page" finished-at="2023-07-31T15:12:36 PKT" duration-ms="2365" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deliveryOrder_view_page -->
-        <test-method signature="after_Add_Do_view()[pri:5, instance:Sales_Module.DeliveryOrder@7d3430a7]" started-at="2023-07-27T13:37:28 PKT" name="after_Add_Do_view" finished-at="2023-07-27T13:37:32 PKT" duration-ms="3570" status="PASS">
+        <test-method signature="after_Add_Do_view()[pri:5, instance:Sales_Module.DeliveryOrder@31f295b6]" started-at="2023-07-31T15:12:36 PKT" name="after_Add_Do_view" finished-at="2023-07-31T15:12:41 PKT" duration-ms="4928" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after_Add_Do_view -->
-        <test-method signature="deliveryOrder_edit_page()[pri:6, instance:Sales_Module.DeliveryOrder@7d3430a7]" started-at="2023-07-27T13:37:32 PKT" name="deliveryOrder_edit_page" finished-at="2023-07-27T13:37:59 PKT" duration-ms="26735" status="PASS">
+        <test-method signature="deliveryOrder_edit_page()[pri:6, instance:Sales_Module.DeliveryOrder@31f295b6]" started-at="2023-07-31T15:12:41 PKT" name="deliveryOrder_edit_page" finished-at="2023-07-31T15:13:11 PKT" duration-ms="30552" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deliveryOrder_edit_page -->
-        <test-method signature="do_issued()[pri:7, instance:Sales_Module.DeliveryOrder@7d3430a7]" started-at="2023-07-27T13:37:59 PKT" name="do_issued" finished-at="2023-07-27T13:38:18 PKT" duration-ms="19634" status="PASS">
+        <test-method signature="do_issued()[pri:7, instance:Sales_Module.DeliveryOrder@31f295b6]" started-at="2023-07-31T15:13:11 PKT" name="do_issued" finished-at="2023-07-31T15:13:35 PKT" duration-ms="23954" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- do_issued -->

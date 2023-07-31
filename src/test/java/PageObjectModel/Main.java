@@ -22,7 +22,7 @@ public class Main {
 	}
 	@Test
 	public void url() throws InterruptedException {
-		SingletonDriver.driver.navigate().to("https://app.cloudeccountant.com/login.html");
+		SingletonDriver.driver.navigate().to("https://beta.cloudeccountant.com/login.html");
 		log.info("Open App cloudeEccountant");
 		
 

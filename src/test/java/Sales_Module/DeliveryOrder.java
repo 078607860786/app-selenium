@@ -16,31 +16,33 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import Singleton.SingletonDriver;
+import helperFunction.HelperFunction;
 
-public class DeliveryOrder{
+public class DeliveryOrder extends HelperFunction
+{
 
-	String status_draft="Draft";
-	String status_Issued="Issued";
-	String status_return_draft="Return Draft";
-	String status_return_posted ="Return Posted";
+	String statusDraft="Draft";
+	String statusIssued="Issued";
+	String statusReturnDraft="Return Draft";
+	String statusReturnPosted ="Return Posted";
 
-	String delivered_to="Eccountant";
-	String customer="Customer_01";
-	String do_warehouse="Warehouse 01";
-	String Purpose="Sales";
+	String deliveredTo="Eccountant";
+	String customerNameAddPage="Customer_01";
+	String doWarehouse="Warehouse 01";
+	String purpose="Sales";
 
 	String Sale_Custom_Field1="Sale Custom1";
 	String Sale_Custom_Field2="Sale Custom2";
 	String Sale_Custom_Field3="Sale Custom3";
 	String Sale_Custom_Field4="Sale Custom4";
 
-	String do_stages="sdf";
-	String Sales_Person="sohail sagar";
-	String do_project="Beta_Project";
-	String Delivery_Date="20-07-2023";
+	String doStagesAddPage="sdf";
+	String salesPersonAddPage="sohail sagar";
+	String doProject="Beta_Project";
+	String doDate="20-07-2023";
 
-	String Product_name1="Product 3";
-	String Product_name2="2ndUnitProduct";
+	String product1NameAddPage="Product 3";
+	String product1NameEditPage="2ndUnitProduct";
 
 	String product_desc1="Desc1";
 	String package_unit1="saw";
@@ -86,16 +88,17 @@ public class DeliveryOrder{
 	double second_Unit_Cost;
 	double third_Unit_Cost;
 	double fourth_Unit_Cost;
-	private CharSequence product1;
 
 	public static Logger log=LogManager.getLogger();
 
 	@BeforeTest
-	public void h() {
+	public void h() 
+	{
 		SingletonDriver.Initialize();
 	}
 	@Test(priority=1,enabled=false)
-	public void Do_Add_hideshow() throws InterruptedException{
+	public void DoAddhideshow() throws InterruptedException
+	{
 
 		SingletonDriver.driver.findElement(By.partialLinkText("Sales1")).click();
 		log.info("Click Sales");
@@ -113,174 +116,146 @@ public class DeliveryOrder{
 		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/div[1]/form/div/div/button\r\n")).click();
 
 		//Company Log
-		if ( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][logo]']")).isSelected() )
-		{
+		if ( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][logo]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][logo]']")).click();
 			//Company Info
-		}if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][c_info]']")).isSelected() )
-		{
+		}
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][c_info]']")).isSelected() ) {
+
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][c_info]")).click();
 		}
 		//Category
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][category]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][category]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][category]")).click();
 		}
 		//SKU Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sku]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sku]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sku]")).click();
 		}
 		//Stock Qty
-		else if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stock_qty]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stock_qty]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stock_qty]")).click();
 		}
 		//Stock Cost
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stock_cost]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stock_cost]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stock_cost]")).click();
 		}
 		//Item Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_no]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_no]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_no]")).click();
 		}
 		//Item size
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_size]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_size]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_size")).click();
 
 		}
 		//Item Type1
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_type]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_type]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_type]")).click();
 
 		}
 		//Item Group
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_group]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_group]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][item_group]")).click();
 
 		}
 		//Other Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][other_number]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][other_number]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][other_number]")).click();
 
 		}
 		//Other Group
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][other_group]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][other_group]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][other_group]")).click();
 
 		}
 		//Main Group
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][main_group]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][main_group]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][main_group]")).click();
 
 		}
 		//Model
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][model]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][model]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][model]")).click();
 
 		}
 		//Registration Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][registration_no]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][registration_no]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][registration_no]")).click();
 
 		}
 		//Description
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][descrp]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][descrp]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][descrp]")).click();
 
 		}
 		//Package Unit
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][pkg_unit]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][pkg_unit]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][pkg_unit]")).click();
 
 		}
 		//Package qty
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][pkg_qty]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][pkg_qty]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][pkg_qty]")).click();
 
 		}
 		//Wieght
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][weight]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][weight]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][weight]")).click();
 
 		}
 		//Stages
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stages]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stages]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][stages]")).click();
 
 		}
 		//Sale Person
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sales_person]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sales_person]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sales_person]")).click();
 
 		}
 		//Sale Custome Field 1
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_1]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_1]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_1]")).click();
 
 		}
 		//Sale Custome Field 2
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_2]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_2]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_2]")).click();
 
 		}
 		//Sale Custome Field 3
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_3]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_3]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_3]")).click();
 
 		}
 		//Sale Custome Field 4
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_4]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_4]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sin_custom_field_4]")).click();
 
 		}
 		//Sale Footer Note 1
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_1]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_1]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_1]")).click();
 
 		}
 		//Sale Footer Note2
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_2]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_2]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_2]")).click();
 
 		}
 		//Sale Footer Note 3
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_3]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_3]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_3]")).click();
 
 		}
 		//Sale Footer Note 4
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_4]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_4]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][sale_footer_note_4]")).click();
 
 		}
 		//Cost List
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][cost_list]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][cost_list]']")).isSelected() ) {
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note][cost_list]")).click();
 		}
 
@@ -292,11 +267,11 @@ public class DeliveryOrder{
 	//<-------------Varify Do Add Page WebElement is present or not----------------->
 
 	@Test(priority=2,enabled=false)
-	public void do_Add_Varify_WebElement() {
+	public void doAddValidateWebElement() 
+	{
 		log.info("****---Do Add Page Varify WebElement are Visible Or Not---****");
 
 		if(SingletonDriver.driver.getPageSource().contains("Product Name")){
-			log.info("Product Name Element is Visible");
 		}else{
 			log.error("Product Name Element is Not Visible");
 		}
@@ -304,170 +279,170 @@ public class DeliveryOrder{
 
 
 		if(SingletonDriver.driver.getPageSource().contains("Category")){
-			log.info("Category Element is Visible");
+		
 		}else{
 			log.error("Category Element is Not Visible");
 		}
 		//SKU
 		if(SingletonDriver.driver.getPageSource().contains("SKU5555")){
-			log.info("SKU5555 Element is Visible");
+	
 		}else{
 			log.error("SKU5555 Element is Not Visible");
 		}
 		//Stock QTY
 		if(SingletonDriver.driver.getPageSource().contains("Stock QTY")){
-			log.info("Stock QTY Element is Visible");
+			
 		}else{
 			log.error("Stock QTY Element is Not Visible");
 		}
 		//Stock Cost442
 		if(SingletonDriver.driver.getPageSource().contains("Stock Cost442")){
-			log.info("Stock Cost442 Element is Visible");
+		
 		}else{
 			log.error("Stock Cost442 Element is Not Visible");
 		}
 		//Item Number
 		if(SingletonDriver.driver.getPageSource().contains("Item Number")){
-			log.info("Item Number Element is Visible");
+			
 		}else{
 			log.error("Item Number Element is Not Visible");
 		}
 		//Size
 		if(SingletonDriver.driver.getPageSource().contains("Size")){
-			log.info("Size Element is Visible");
+			
 		}else{
 			log.error("Size Element is Not Visible");
 		}
 		//	Item Type1
 		if(SingletonDriver.driver.getPageSource().contains("Item Type1")){
-			log.info("Item Type1 Element is Visible");
+			
 		}else{
 			log.error("Item Type1 Element is Not Visible");
 		}
 		//Item Group
 		if(SingletonDriver.driver.getPageSource().contains("Item Group")){
-			log.info("Item Group Element is Visible");
+			
 		}else{
 			log.error("Item Group Element is Not Visible");
 		}
 		//Other Number
 		if(SingletonDriver.driver.getPageSource().contains("Other Number")){
-			log.info("Other Number Element is Visible");
+			
 		}else{
 			log.error("Other Number Element is Not Visible");
 		}
 		//Other Group
 		if(SingletonDriver.driver.getPageSource().contains("Other Group")){
-			log.info("Other Group Element is Visible");
+			
 		}else{
 			log.error("Other Group Element is Not Visible");
 		}
 		//Main Group
 		if(SingletonDriver.driver.getPageSource().contains("Main Group")){
-			log.info("Main Group Element is Visible");
+			
 		}else{
 			log.error("Main Group Element is Not Visible");
 		}
 		//Model
 		if(SingletonDriver.driver.getPageSource().contains("Model")){
-			log.info("Model Element is Visible");
+		
 		}else{
 			log.error("Model Element is Not Visible");
 		}
 		//Registration No
 		if(SingletonDriver.driver.getPageSource().contains("Registration No")){
-			log.info("Registration No Element is Visible");
+			
 		}else{
 			log.error("Registration No Element is Not Visible");
 		}
 		//Description
 		if(SingletonDriver.driver.getPageSource().contains("Description")){
-			log.info("Description Element is Visible");
+			
 		}else{
 			log.error("Description Element is Not Visible");
 		}
 		//Package Unit
 		if(SingletonDriver.driver.getPageSource().contains("Package Unit")){
-			log.info("Package Unit Element is Visible");
+			
 		}else{
 			log.error("Package Unit Element is Not Visible");
 		}
 		//Package QTY
 		if(SingletonDriver.driver.getPageSource().contains("Package QTY")){
-			log.info("Package QTY Element is Visible");
+			
 		}else{
 			log.error("Package QTY Element is Not Visible");
 		}
 		//Weight (KG's)
 		if(SingletonDriver.driver.getPageSource().contains("Weight (KG's)")){
-			log.info("Weight (KG's) Element is Visible");
+			
 		}else{
 			log.error("Weight (KG's) Element is Not Visible");
 		}
 		//Stages
 		if(SingletonDriver.driver.getPageSource().contains("Stages")){
-			log.info("Stages Element is Visible");
+			
 		}else{
 			log.error("Stages Element is Not Visible");
 		}
 		//Sales Person 
 		if(SingletonDriver.driver.getPageSource().contains("Sales Person")){
-			log.info("Sales Person Element is Visible");
+			
 		}else{
 			log.error("Sales Person Element is Not Visible");
 		}
 		//Sale Custom Field 1
 		if(SingletonDriver.driver.getPageSource().contains("Sale Custom Field 1")){
-			log.info("Sale Custom Field 1 Element is Visible");
+	
 		}else{
 			log.error("Sale Custom Field 1 is Not Visible");
 		}
 		//Sale Custom Field 2
 		if(SingletonDriver.driver.getPageSource().contains("Sale Custom Field 2")){
-			log.info("Sale Custom Field 2 Element is Visible");
+			
 		}else{
 			log.error("Sale Custom Field 2 Element is Not Visible");
 		}
 		//Sale Custom Field 3
 		if(SingletonDriver.driver.getPageSource().contains("Sale Custom Field 3")){
-			log.info("Sale Custom Field 3 Element is Visible");
+			
 		}else{
 			log.error("Sale Custom Field 3 Element is Not Visible");
 		}
 		//Sale Custom Field 4
 		if(SingletonDriver.driver.getPageSource().contains("Sale Custom Field 4")){
-			log.info("Sale Custom Field 4 Element is Visible");
+			
 		}else{
 			log.error("Sale Custom Field4  Element is Not Visible");
 		}
 
 		//Sale Footer Note 1
 		if(SingletonDriver.driver.getPageSource().contains("Sale Footer Note 1")){
-			log.info("Sale Footer Note 1 Element is Visible");
+			
 		}else{
 			log.error("Sale Footer Note 1 is Not Visible");
 		}
 		//Sale Footer Note 2
 		if(SingletonDriver.driver.getPageSource().contains("Sale Footer Note 2")){
-			log.info("Sale Footer Note 2 Element is Visible");
+			
 		}else{
 			log.error("Sale Footer Note 2 Element is Not Visible");
 		}
 		//Sale Footer Note 3
 		if(SingletonDriver.driver.getPageSource().contains("Sale Footer Note 3")){
-			log.info("Sale Footer Note 3 Element is Visible");
+		
 		}else{
 			log.error("Sale Footer Note 3 Element is Not Visible");
 		}
 		//Sale Footer Note 4
 		if(SingletonDriver.driver.getPageSource().contains("Sale Footer Note 4")){
-			log.info("Sale Footer Note 4 Element is Visible");
+			
 		}else{
 			log.error("Sale Footer Note 4 Element is Not Visible");
 		}
 		//cost222 List	
 		if(SingletonDriver.driver.getPageSource().contains("cost222 List")){
-			log.info("cost222 List Element is Visible");
+			
 		}else{
 			log.error("cost222 List Element is Not Visible");
 		}
@@ -475,19 +450,19 @@ public class DeliveryOrder{
 
 		//Second Units
 		if(SingletonDriver.driver.getPageSource().contains("Second Units")){
-			log.info("Second Units Element is Visible");
+			
 		}else{
 			log.error("Second Units Element is Not Visible");
 		}
 		//Third Units
 		if(SingletonDriver.driver.getPageSource().contains("Third Units")){
-			log.info(" Third Units Element is Visible");
+	
 		}else{
 			log.error(" Third Units Element is Not Visible");
 		}
 		//Third Units
 		if(SingletonDriver.driver.getPageSource().contains("Fourth Units")){
-			log.info("Fourth Units Element is Visible");
+		
 		}else{
 			log.error("Fourth Units Element is Not Visible");
 		}
@@ -495,7 +470,8 @@ public class DeliveryOrder{
 	@Test(priority=3,enabled=true)
 	//Click Deliver Order
 
-	public void deliveryOrder_add_page() throws InterruptedException, AWTException {
+	public void deliveryOrderAddPage() throws InterruptedException, AWTException 
+	{
 
 
 		Robot robot = new Robot();
@@ -521,11 +497,11 @@ public class DeliveryOrder{
 		Thread.sleep(1000);
 
 		// DELIVERED TO
-		SingletonDriver.driver.findElement(By.id("issued_to")).sendKeys(delivered_to);
+		SingletonDriver.driver.findElement(By.id("issued_to")).sendKeys(deliveredTo);
 		log.info("Enter Delivered_To Name");
 
 		//customer_name
-		SingletonDriver.driver.findElement(By.id("customer_name")).sendKeys(customer);
+		SingletonDriver.driver.findElement(By.id("customer_name")).sendKeys(customerNameAddPage);
 		log.info("Enter Customer Name");
 		Thread.sleep(2000);
 		WebElement specificTextElement = SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[2]/div[4]/table/thead/tr/th/div/div/div[2]/a[1]/div/div[2]"));
@@ -535,18 +511,18 @@ public class DeliveryOrder{
 		//Click Delivery Date
 		SingletonDriver.driver.findElement(By.id("notedate")).click();
 		SingletonDriver.driver.findElement(By.id("notedate")).clear();
-		SingletonDriver.driver.findElement(By.id("notedate")).sendKeys(Delivery_Date,Keys.ENTER);		
+		SingletonDriver.driver.findElement(By.id("notedate")).sendKeys(doDate,Keys.ENTER);		
 
 		//Click Warehouse Field
 		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='warehouse']")).click();
-		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[3]/div/div/div/div/div/input")).sendKeys(do_warehouse,Keys.ENTER);
+		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[3]/div/div/div/div/div/input")).sendKeys(doWarehouse,Keys.ENTER);
 		log.info("Select Warehouse");
 
 		//Click Purpose Field
 		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='purpose_id']")).click();
 
 		//Type Purpose 
-		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='purpose_id']")).sendKeys(Purpose,Keys.ENTER);
+		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='purpose_id']")).sendKeys(purpose,Keys.ENTER);
 		log.info("Select Purpose");
 
 		//Enter Sale Custom Field 1
@@ -567,21 +543,21 @@ public class DeliveryOrder{
 
 		//Click Stages Field
 		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='stage_id']")).click();
-		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[9]/div/div/div/div/input")).sendKeys(do_stages,Keys.ENTER);
+		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[9]/div/div/div/div/input")).sendKeys(doStagesAddPage,Keys.ENTER);
 		log.info("Select Stages");
 
 		//Click Sales Person
 		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='sales_person']")).click();
-		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[10]/div/div/div/div/input")).sendKeys(Sales_Person,Keys.ENTER);
+		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[10]/div/div/div/div/input")).sendKeys(salesPersonAddPage,Keys.ENTER);
 		log.info("Select Sales Person");
 
 		//Select Project
 		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='project']")).click();
-		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[11]/div/div/div/div/input")).sendKeys(do_project,Keys.ENTER);
+		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[3]/div/div/div[11]/div/div/div/div/input")).sendKeys(doProject,Keys.ENTER);
 		log.info("Select Project");
 
 		//Again Enter Customer Name
-		SingletonDriver.driver.findElement(By.id("customer_name")).sendKeys(customer);
+		SingletonDriver.driver.findElement(By.id("customer_name")).sendKeys(customerNameAddPage);
 		log.info("Enter Customer Name");
 		Thread.sleep(2000);
 		WebElement specificTextElement1 = SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[2]/div[4]/table/thead/tr/th/div/div/div[2]/a[1]/div/div[2]"));
@@ -592,7 +568,7 @@ public class DeliveryOrder{
 		//Select Product
 		WebElement pro_name1=SingletonDriver.driver.findElement(By.id("name1"));
 		pro_name1.clear();
-		pro_name1.sendKeys(Product_name1);
+		pro_name1.sendKeys(product1NameAddPage);
 		Thread.sleep(1000);
 		Actions builder1=new Actions(SingletonDriver.driver);
 
@@ -653,132 +629,113 @@ public class DeliveryOrder{
 
 	}
 	@Test(priority=4,enabled=false)
-	public void do_view_hideshow() throws InterruptedException {
+	public void doViewHideshow() throws InterruptedException
+	{
 		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div/section/div[2]/div/div/div[1]/div[1]/form/div/button")).click();
 		//Company Logo
-		if ( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][logo]']")).isSelected() )
-		{
+		if ( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][logo]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][logo]']")).click();
 
-		}
+		}else
 		//Company Info
-		if ( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][c_info]']")).isSelected() )
-		{
+		if ( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][c_info]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][c_info]']")).click();
 
 		}	
 
 		//Sr.#
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item]")).click();
 		}
 
 		//Product Name
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_name]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_name]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_name]']")).click();
 		}
 
 		//SKU Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sku]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sku]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sku]']")).click();
 		}
 
 		//Stock Qty
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stock_qty]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stock_qty]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stock_qty]']")).click();
 		}
 
 		//Stock Cost
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stock_cost]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stock_cost]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stock_cost]']")).click();
 		}
 
 		//Barcode
 
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][upc]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][upc]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][upc]']")).click();
 		}
 
 		//Short Attributes
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][short_attributes]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][short_attributes]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][short_attributes]']")).click();
 		}
 
 		//Long Attributes
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][long_attributes]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][long_attributes]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][long_attributes]']")).click();
 		}
 
 		//Category
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][category]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][category]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][category]']")).click();
 		}
 
 		//Weight 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][weight]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][weight]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][weight]']")).click();
 
 		}
 
 		//Registration Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][reg]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][reg]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][reg]']")).click();
 
 		}
 
 		//Item Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_no]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_no]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_no]']")).click();
 		}
 
 		//Other Number
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][other_number]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][other_number]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][other_number]']")).click();
 
 		}
 
 		//Other Group
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][other_group]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][other_group]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][other_group]']")).click();
 
 		}
 		//Main Group
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][mian_group]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][mian_group]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][mian_group]']")).click();
 
 		}
 		//Item Group
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_group]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_group]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_group]']")).click();
 
 		}
 		//Model
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][model]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][model]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][model]']")).click();
 
 		}
 
 		//Item size
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_size]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_size]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_size]']")).click();
 			Thread.sleep(1000);
 		}
@@ -786,14 +743,12 @@ public class DeliveryOrder{
 
 		//Size
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_size]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_size]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_size]']")).click();
 		}
 
 		//Item Type1
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_type]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_type]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][item_type]']")).click();
 
 		}
@@ -802,128 +757,109 @@ public class DeliveryOrder{
 
 
 		//Description
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][descrp]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][descrp]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][descrp]']")).click();
 
 		}
 
 		//Unit
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][unit]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][unit]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][unit]']")).click();
 
 		}
 		//Quantity
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][quantity]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][quantity]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][quantity]']")).click();
 
 		}
 		//Pending Quantity 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pending_quantity]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pending_quantity]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pending_quantity]']")).click();
 
 		}
 		//Aditional Products 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][additional_products]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][additional_products]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][additional_products]']")).click();
 
 		}
 		//Package Unit
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pkg_unit]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pkg_unit]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pkg_unit]']")).click();
 
 		}
 
 		//Cost Center
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][cost_center_id]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][cost_center_id]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][cost_center_id]']")).click();
 
 		}
 		//Package qty
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pkg_qty]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pkg_qty]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pkg_qty]']")).click();
 
 		}
 
 		//Product Custome 1
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus1]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus1]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus1]']")).click();
 
 		}
 
 		//Product Custome 2
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus2]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus2]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus2]']")).click();
 
 		}
 
 		//Product Custome 3
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus3]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus3]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus3]']")).click();
 
 		}
 
 		//Product Custome 4
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus4]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus4]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][pr_cus4]']")).click();
 			Thread.sleep(1000);
 		}
 
 		//Batch
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][batch_no]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][batch_no]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][batch_no]']")).click();
 
 		}
 
 		//Expired At 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][expired_at]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][expired_at]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][expired_at]']")).click();
 
 		}
 		//Quality Control
 
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][qc]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][qc]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][qc]']")).click();
 
 		}
 		//Sale Custome Field 1
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_1]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_1]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_1]']")).click();
 
 		}
 		//Sale Custome Field 2
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_2]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_2]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_2]']")).click();
 
 		}
 		//Sale Custome Field 3
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_3]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_3]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_3]']")).click();
 
 		}
 		//Sale Custome Field 4
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_4]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_4]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sin_custom_field_4]']")).click();
 
 		}
@@ -933,99 +869,84 @@ public class DeliveryOrder{
 		Thread.sleep(2000);
 
 		//Stages
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stages]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stages]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][stages]']")).click();
 			Thread.sleep(1000);
 		}
 		//Sale Person
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sales_person]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sales_person]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sales_person]']")).click();
 			Thread.sleep(1000);
 		}
 
 		//Created By1
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][created_by]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][created_by]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][created_by]']")).click();
 
 		}
 		//Created At
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][created_at]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][created_at]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][created_at]']")).click();
 
 		}
 		//Issued By
 
 
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][issued_by]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][issued_by]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][issued_by]']")).click();
 
 		}
 		//Sale Footer Note 1
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_1]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_1]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_1]']")).click();
 
 		}
 		//Sale Footer Note2
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_2]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_2]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_2]']")).click();
 
 		}
 		//Sale Footer Note 3
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_3]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_3]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_3]']")).click();
 
 		}
 		//Sale Footer Note 4
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_4]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_4]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][sale_footer_note_4]']")).click();
 
 		}
 
 		//Second Units
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][second_units]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][second_units]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][second_units]']")).click();
 
 		}
 		//Third Units
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][third_units]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][third_units]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][third_units]']")).click();
 
 		}
 		//Fourth Units
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][fourth_units]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][fourth_units]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][fourth_units]']")).click();
 
 		}
 
 		//Base Unit
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][base_unit]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][base_unit]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][base_unit]']")).click();
 
 		}
 		//Base Qty
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][base_qty]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][base_qty]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][base_qty]']")).click();
 
 		}
 		//Cost List
-		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][cost_list]']")).isSelected() )
-		{
+		if( !SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][cost_list]']")).isSelected() ){
 			SingletonDriver.driver.findElement(By.cssSelector("input[name*='report[issue_note_view][cost_list]']")).click();
 		}
 
@@ -1037,55 +958,57 @@ public class DeliveryOrder{
 
 
 	@Test(priority=4,enabled=true)
-	public void deliveryOrder_view_page() {
-		do_Add_Varify_WebElement();
+	public void deliveryOrderViewPage() 
+	{
+		doAddValidateWebElement();
 	}
 
 	@Test(priority=5,enabled=true)
-	public void after_Add_Do_view() {
+	public void after_Add_Do_view() 
+	{
 
 
 		//Check Status 
-		if(SingletonDriver.driver.getPageSource().contains(status_draft)){
+		if(SingletonDriver.driver.getPageSource().contains(statusDraft)){
 			log.info("Delivery Order  have in  Draft Status...");
 		}else{
 			log.error("Delivery Order  have Not in  Draft Status");
 		}
 
 		//Product Name on View Page...
-		if(SingletonDriver.driver.getPageSource().contains(Product_name1)){
+		if(SingletonDriver.driver.getPageSource().contains(product1NameAddPage)){
 			log.info("Product Name is Visible On View Page");
 		}else{
 			log.error("Product Name is Not Visible On View Page");
 		}
 		//Sales
-		if(SingletonDriver.driver.getPageSource().contains(Purpose)){
+		if(SingletonDriver.driver.getPageSource().contains(purpose)){
 			log.info("Sale Purpose is Visible on Veiw Page");
 		}else{
 			log.error("Sale Purpose is not Visible on Veiw Page");
 		}
 
 		//Warehouse
-		if(SingletonDriver.driver.getPageSource().contains(do_warehouse)){
+		if(SingletonDriver.driver.getPageSource().contains(doWarehouse)){
 			log.info("Warehouse is Visible on Veiw Page");
 		}else{
 			log.error("Warehouse is not Visible on Veiw Page");
 		}
 
 		//Sales Person
-		if(SingletonDriver.driver.getPageSource().contains(Purpose)){
+		if(SingletonDriver.driver.getPageSource().contains(purpose)){
 			log.info("Sale Purpose is Visible on Veiw Page");
 		}else{
 			log.error("Sale Purpose is not Visible on Veiw Page");
 		}
 		// Stages
-		if(SingletonDriver.driver.getPageSource().contains(do_stages)){
+		if(SingletonDriver.driver.getPageSource().contains(doStagesAddPage)){
 			log.info("Stages is Visible on Veiw Page");
 		}else{
 			log.error("Stages is not Visible on Veiw Page");
 		}
 		// Stages
-		if(SingletonDriver.driver.getPageSource().contains(do_project)){
+		if(SingletonDriver.driver.getPageSource().contains(doProject)){
 			log.info("Project is Visible on Veiw Page");
 		}else{
 			log.error("Project is not Visible on Veiw Page");
@@ -1120,7 +1043,7 @@ public class DeliveryOrder{
 		}
 
 		//Product Name
-		if(SingletonDriver.driver.getPageSource().contains(Product_name1)){
+		if(SingletonDriver.driver.getPageSource().contains(product1NameAddPage)){
 			log.info("Product name is Visible on Veiw Page");
 		}else{
 			log.error("Product name is not Visible on Veiw Page");
@@ -1203,7 +1126,7 @@ public class DeliveryOrder{
 		//Fourth Unit Qty
 		fourth_Unit_Qty=Integer.parseInt(Pro_qty)*(15);
 		System.out.println("Fourth Units Qty  = "+fourth_Unit_Qty);
-		
+
 
 
 		//Product Stock Cost
@@ -1242,7 +1165,7 @@ public class DeliveryOrder{
 		}else{
 			log.error("Forth Unit  is not Visible on Veiw Page");
 		}
-		
+
 		// Validate 2,3 and Units  Qty
 		//Second Unit Qty
 		if(SingletonDriver.driver.getPageSource().contains(String.valueOf(second_Unit_Qty))){
@@ -1281,23 +1204,23 @@ public class DeliveryOrder{
 		}else{
 			log.error("Forth Unit Cost  is not Visible on Veiw Page");
 		}
- 
+
 		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div/section/div[2]/div/div/div[1]/div[2]/form/div/div[1]/div/button")).click();
-	    //Download PDF 
+		//Download PDF 
 		SingletonDriver.driver.findElement(By.linkText("Download PDF")).click();
 		log.info("Successfully Download PDF");
 
-  
+
 	}
 	//Edit page...
 	@Test(priority=6,enabled=true)
 	public void deliveryOrder_edit_page() throws InterruptedException {
-          Thread.sleep(2000);
+		Thread.sleep(2000);
 		//Click Edit Button
 		SingletonDriver.driver.findElement(By.linkText("Edit")).click();
 		log.info("Click Edit Button");
 		Thread.sleep(2000);
-		boolean pro_1 = SingletonDriver.driver.getPageSource().contains(Product_name1);
+		boolean pro_1 = SingletonDriver.driver.getPageSource().contains(product1NameEditPage);
 		if (pro_1== true) {
 			System.out.print("Product 1 Visible on Edit page");
 		}
@@ -1313,7 +1236,7 @@ public class DeliveryOrder{
 		//Select Product 
 		WebElement pro_name1=SingletonDriver.driver.findElement(By.id("name4"));
 		pro_name1.clear();
-		pro_name1.sendKeys(Product_name2);
+		pro_name1.sendKeys(product1NameEditPage);
 		Thread.sleep(3000);
 		Actions builder1=new Actions(SingletonDriver.driver);
 
@@ -1365,27 +1288,27 @@ public class DeliveryOrder{
 		Thread.sleep(2000);
 		JavascriptExecutor js = (JavascriptExecutor) SingletonDriver.driver;
 		js.executeScript("window.scrollBy(0,350)", "");
-		
+
 		//Click Save Button
 		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[3]/div/div[2]/button")).click();
 		log.info("Click Save Button");
 
-//		do_view_hideshow();
-//		do_Add_Varify_WebElement();
+		//		do_view_hideshow();
+		//		do_Add_Varify_WebElement();
 
 
 
 
 	}
 	@Test(priority=7,enabled=true)
-	
+
 	public void do_issued() throws InterruptedException {
 		SingletonDriver.driver.findElement(By.id("finalizeButton")).click();
-		if(SingletonDriver.driver.getPageSource().contains(status_Issued)){
+		if(SingletonDriver.driver.getPageSource().contains(statusIssued)){
 			log.info("Delivery Order  have in  Issued Status...");
 		}else{
 			log.error("Delivery Order  have Not in  Issued Status");
-			
+
 		}
 		Thread.sleep(3000);
 		SingletonDriver.driver.navigate().refresh(); 
@@ -1396,40 +1319,39 @@ public class DeliveryOrder{
 		js.executeScript("window.scrollBy(0,350)", "");
 		Thread.sleep(2000);
 		String stock_cost=SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div/section/div/div/div/div[2]/div[2]/div[2]/div/div/div/table/tbody/tr[3]/td[5]")).getText();
-		
-	    String numericValue = stock_cost.replaceAll("-", "");
+
+		String numericValue = stock_cost.replaceAll("-", "");
 		System.out.println(numericValue);
 		//click Do-Stock Voucher
 		WebElement stock_cost1=SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div/section/div/div/div/div[2]/div[1]/div/div[1]/div[2]/table/tbody/tr[10]/td/a"));
 		stock_cost1.click();
 		String Do_Debit=SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div/div[6]/div[1]/div/div[2]/form/div/div[2]/div[1]/div[3]/table/tfoot/tr/td[3]")).getText();
 		String Do_Credit=SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div/div[6]/div[1]/div/div[2]/form/div/div[2]/div[1]/div[3]/table/tfoot/tr/td[3]")).getText();
-		
-		   if(Do_Debit.equals(Do_Credit)) {
-			   System.out.println("Do Debit and Credit Amount is Equal");
-		   }else {
-			   System.out.println("Do Debit and Credit Amount is not Equal");
 
-			   
-		   }
-		   if(Do_Debit.equals(stock_cost1)) {
-			   System.out.println("Stock Do Amount is Equal Debit and Credit Amount");
-		   }else {
-			   System.out.println("Stock Do Amount is not Equal Debit and Credit Amount");
-			   System.out.println("Stock Amount is ="+numericValue);
-			   System.out.println("Debit Amount is ="+Do_Debit);
+		if(Do_Debit.equals(Do_Credit)) {
+			System.out.println("Do Debit and Credit Amount is Equal");
+		}else {
+			System.out.println("Do Debit and Credit Amount is not Equal");
 
 
-			   
-		   }
-		
-//		do_view_hideshow();
-//		do_Add_Varify_WebElement();
+		}
+		if(Do_Debit.equals(stock_cost1)) {
+			System.out.println("Stock Do Amount is Equal Debit and Credit Amount");
+		}else {
+			System.out.println("Stock Do Amount is not Equal Debit and Credit Amount");
+			System.out.println("Stock Amount is ="+numericValue);
+			System.out.println("Debit Amount is ="+Do_Debit);
+
+
+
+		}
+
 
 	}
 	@Test(priority=8,enabled=false)
-	
-	public void do_return_draft() throws InterruptedException {
+
+	public void do_return_draft() throws InterruptedException 
+	{
 		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div/section/div[2]/div/div/div[1]/div[2]/form/div/div[1]/div/button")).click();
 		Thread.sleep(1000);
 		SingletonDriver.driver.findElement(By.linkText("Return")).click(); 
@@ -1438,33 +1360,34 @@ public class DeliveryOrder{
 		Thread.sleep(1000);
 		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[1]/button")).click();
 		Thread.sleep(2000);
-		if(SingletonDriver.driver.getPageSource().contains(status_return_draft)){
+		if(SingletonDriver.driver.getPageSource().contains(statusReturnDraft)){
 			log.info("Delivery Order  have in  Return Draft Status...");
 		}else{
 			log.error("Delivery Order  have Not in  Return Draft Status");
 		}
-		do_view_hideshow();
-		do_Add_Varify_WebElement();
+		doViewHideshow();
+		doAddValidateWebElement();
 
 	}
 	@Test(priority=9,enabled=false)
-	public void do_return_finalize() throws InterruptedException {
+	public void do_return_finalize() throws InterruptedException 
+	{
 		//Click Return Finalize Button
 		SingletonDriver.driver.findElement(By.id("finalizeButton")).click();
-		if(SingletonDriver.driver.getPageSource().contains(status_return_posted)){
+		if(SingletonDriver.driver.getPageSource().contains(statusReturnPosted)){
 			log.info("Delivery Order  have in  Return Posted Status...");
 		}else{
 			log.error("Delivery Order  have Not in  Return Posted  Status");
 		}
-		
-		   WebElement element = SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div/section/div[2]/div/div/div[2]/div[1]/div/div[1]/div[2]/table/tbody/tr[10]/td/a"));
 
-	        // Use the getText() method to get the visible text from the element
-	        String data = element.getText();
-	        System.out.print(data);
-		do_view_hideshow();
-		do_Add_Varify_WebElement();
-		
+		WebElement element = SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div/section/div[2]/div/div/div[2]/div[1]/div/div[1]/div[2]/table/tbody/tr[10]/td/a"));
+
+		// Use the getText() method to get the visible text from the element
+		String data = element.getText();
+		System.out.print(data);
+		doViewHideshow();
+		doAddValidateWebElement();
+
 	}
 
 
