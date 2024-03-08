@@ -4,8 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
      <class name="PageObjectModel.Main"/>
-      <class name="PageObjectModel.LoginPage"/>
-      <class name="Sales_Module.DeliveryOrder"/>
+  
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

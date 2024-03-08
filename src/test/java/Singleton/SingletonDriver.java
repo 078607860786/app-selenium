@@ -3,21 +3,21 @@ package Singleton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SingletonDriver {
 
 
-	public static WebDriver driver=null;
+	public static WebDriver driver;
 
 	public static void Initialize() {
 		
-		if(driver==null) {
-			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
-			driver.manage().window().maximize() ;
-		}
+		 
+			 System.setProperty("webdriver.chrome.driver", "F\\chromedriver2.exe");
+			 driver=new ChromeDriver();
 	}
+
+	
+	
 	public static void close() {
 		driver.close();
 
@@ -25,6 +25,10 @@ public class SingletonDriver {
 	public static void quite() {
 		driver.quit();
 
+	}
+	public static Object manage() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

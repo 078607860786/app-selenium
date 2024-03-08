@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import PageObjectModel.Main;
 import Singleton.SingletonDriver;
 
-public class SaleInvoice extends Main{
+public class SaleInvoice{
 
 	@BeforeTest
 	public void h() {
@@ -21,7 +21,7 @@ public class SaleInvoice extends Main{
 	@Test
 	public void saleInovice() {
 		//Click Sales
-		SingletonDriver.driver.findElement(By.partialLinkText("Sales1")).click();
+		SingletonDriver.driver.findElement(By.partialLinkText("Sales")).click();
 		SingletonDriver.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//click Sale Invoice
 		SingletonDriver.driver.findElement(By.partialLinkText("Sale Invoice4")).click();

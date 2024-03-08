@@ -3,12 +3,12 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="Sales_Module.DeliveryOrder">
+      <class name="PageObjectModel.Main">
         <methods>
+          <include name="url"/>
           <include name="h"/>
-          <include name="do_issued"/>
         </methods>
-      </class> <!-- Sales_Module.DeliveryOrder -->
+      </class> <!-- PageObjectModel.Main -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

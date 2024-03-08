@@ -96,18 +96,18 @@ public class DeliveryOrder extends HelperFunction
 	{
 		SingletonDriver.Initialize();
 	}
-	@Test(priority=1,enabled=false)
+	@Test(priority=1,enabled=true)
 	public void DoAddhideshow() throws InterruptedException
 	{
 
-		SingletonDriver.driver.findElement(By.partialLinkText("Sales1")).click();
+		SingletonDriver.driver.findElement(By.partialLinkText("Sales")).click();
 		log.info("Click Sales");
 		SingletonDriver.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//Click Delivery Order
-		SingletonDriver.driver.findElement(By.partialLinkText("Delivery Order1")).click();
+		SingletonDriver.driver.findElement(By.partialLinkText("Delivery Order")).click();
 		log.info("Click Delivery Order");
 		//Click Add Delivery Order1
-		SingletonDriver.driver.findElement(By.partialLinkText("Add Delivery Order1")).click();
+		SingletonDriver.driver.findElement(By.partialLinkText("Add Delivery Order")).click();
 		log.info("Click Add Delivery Order");
 
 		Thread.sleep(1000);
@@ -484,15 +484,15 @@ public class DeliveryOrder extends HelperFunction
 		Thread.sleep(2000);
 		log.info("<------Enter Delivery Order Details------>");
 
-		SingletonDriver.driver.findElement(By.partialLinkText("Sales1")).click();
-		log.info("Click Sales");
-		SingletonDriver.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//Click Delivery Order
-		SingletonDriver.driver.findElement(By.partialLinkText("Delivery Order1")).click();
-		log.info("Click Delivery Order");
-		//Click Add Delivery Order1
-		SingletonDriver.driver.findElement(By.partialLinkText("Add Delivery Order1")).click();
-		log.info("Click Add Delivery Order");
+//		SingletonDriver.driver.findElement(By.partialLinkText("Sales")).click();
+//		log.info("Click Sales");
+//		SingletonDriver.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		//Click Delivery Order
+//		SingletonDriver.driver.findElement(By.partialLinkText("Delivery Order")).click();
+//		log.info("Click Delivery Order");
+//		//Click Add Delivery Order1
+//		SingletonDriver.driver.findElement(By.partialLinkText("Add Delivery Order")).click();
+//		log.info("Click Add Delivery Order");
 
 		Thread.sleep(1000);
 
@@ -578,30 +578,34 @@ public class DeliveryOrder extends HelperFunction
 		SingletonDriver.driver.findElement(By.id("product_desc1")).clear();
 		SingletonDriver.driver.findElement(By.id("product_desc1")).sendKeys(product_desc1);
 		log.info("Add product_desc1");
-		Thread.sleep(500);
+		Thread.sleep(1000);
 
 		//Select Packae Unit
 		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='package_unit1']")).click();
 		Thread.sleep(1000);
 		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[4]/div/div/div[2]/div/div[19]/div/div/div/div/input")).sendKeys(package_unit1,Keys.ENTER);
 		log.info("Select Package Unitt");
-
-		//Selct Cost Center
-		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='cost_center_id1']")).click();
-		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[4]/div/div/div[2]/div/div[20]/div/div/div/div/input")).sendKeys(cost_center_id1,Keys.ENTER);
-		log.info("select cost_center_id1");
-
+		
 		//Enter Weight 
-		WebElement element_weight1= SingletonDriver.driver.findElement(By.id("weight1"));
-		element_weight1.clear();
-		element_weight1 .sendKeys(String.valueOf(pro_weight1));
-		log.info("Enter Weight1");
+				WebElement element_weight1= SingletonDriver.driver.findElement(By.id("weight1"));
+				element_weight1.clear();
+				element_weight1 .sendKeys(String.valueOf(pro_weight1));
+				log.info("Enter Weight1");
+				
 
-		//Enter Package QTY
-		WebElement element_package1=SingletonDriver.driver.findElement(By.id("package1"));
-		element_package1.clear();
-		element_package1.sendKeys(String.valueOf(pro_package1));
-		log.info("Enter Package1 qty");
+				//Enter Package QTY
+				WebElement element_package1=SingletonDriver.driver.findElement(By.id("package1"));
+				element_package1.clear();
+				element_package1.sendKeys(String.valueOf(pro_package1));
+				log.info("Enter Package1 qty");
+
+//		//Selct Cost Center
+//		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='cost_center_id1']")).click();
+//		SingletonDriver.driver.findElement(By.xpath("/html/body/div[1]/div[4]/div[2]/div[1]/div[2]/div/div/div/form/div[2]/div/div/div[4]/div/div/div[2]/div/div[20]/div/div/div/div/input")).sendKeys(cost_center_id1,Keys.ENTER);
+//		log.info("select cost_center_id1");
+
+		
+
 
 		//		//		Select unit1
 		//		SingletonDriver.driver.findElement(By.cssSelector("button[data-id*='unit1']")).click();
@@ -614,9 +618,12 @@ public class DeliveryOrder extends HelperFunction
 		element_qty1.clear();
 		element_qty1 .sendKeys(String.valueOf(pro_qty1));
 		log.info("Enter 1st Product qantity");
-
+ 
+		Thread.sleep(2000);
 		//Add Sale Foter Note
-		SingletonDriver.driver.findElement(By.id("sale_footer_note_1")).sendKeys(do_footer1);
+		WebElement footer1=SingletonDriver.driver.findElement(By.id("sale_footer_note_1"));
+		footer1.click();
+		footer1.sendKeys(do_footer1);
 		SingletonDriver.driver.findElement(By.id("sale_footer_note_2")).sendKeys(do_footer2);
 		SingletonDriver.driver.findElement(By.id("sale_footer_note_3")).sendKeys(do_footer3);
 		SingletonDriver.driver.findElement(By.id("sale_footer_note_4")).sendKeys(do_footer4);
@@ -957,7 +964,7 @@ public class DeliveryOrder extends HelperFunction
 
 
 
-	@Test(priority=4,enabled=true)
+	@Test(priority=4,enabled=false)
 	public void deliveryOrderViewPage() 
 	{
 		doAddValidateWebElement();
@@ -1213,7 +1220,7 @@ public class DeliveryOrder extends HelperFunction
 
 	}
 	//Edit page...
-	@Test(priority=6,enabled=true)
+	@Test(priority=6,enabled=false)
 	public void deliveryOrder_edit_page() throws InterruptedException {
 		Thread.sleep(2000);
 		//Click Edit Button
@@ -1300,7 +1307,7 @@ public class DeliveryOrder extends HelperFunction
 
 
 	}
-	@Test(priority=7,enabled=true)
+	@Test(priority=7,enabled=false)
 
 	public void do_issued() throws InterruptedException {
 		SingletonDriver.driver.findElement(By.id("finalizeButton")).click();

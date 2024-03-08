@@ -23,8 +23,8 @@ public class LoginPage{
 
 	
 //	Enter Username && Password for login
-	@Test(priority=1)
-	public void credentialsLoginPage() {
+	@Test()
+	public void credentialsLoginPage() throws InterruptedException {
 //		//Enter Username
 		
 		 //WebDriver c= openBrowser(driver);
@@ -36,6 +36,8 @@ public class LoginPage{
 //		//ClickloginBtn
 		SingletonDriver.driver.findElement(By.id("login-btn")).click(); 
 		log.info("Click LoginButton");
+
+		
 	}
 	
 }

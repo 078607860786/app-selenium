@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
 <title>TestNG Report</title>
@@ -9,16 +9,13 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">7</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">131,067</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">3,809</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">PageObjectModel.LoginPage</td><td><a href="#m0">credentialsLoginPage</a></td><td rowspan="1">1690798293594</td><td rowspan="1">5952</td></tr><tr class="passedodd"><td rowspan="1">PageObjectModel.Main</td><td><a href="#m1">url</a></td><td rowspan="1">1690798290371</td><td rowspan="1">3214</td></tr><tr class="passedeven"><td rowspan="5">Sales_Module.DeliveryOrder</td><td><a href="#m2">after_Add_Do_view</a></td><td rowspan="1">1690798356428</td><td rowspan="1">4928</td></tr><tr class="passedeven"><td><a href="#m3">deliveryOrder_add_page</a></td><td rowspan="1">1690798299557</td><td rowspan="1">54491</td></tr><tr class="passedeven"><td><a href="#m4">deliveryOrder_edit_page</a></td><td rowspan="1">1690798361363</td><td rowspan="1">30552</td></tr><tr class="passedeven"><td><a href="#m5">deliveryOrder_view_page</a></td><td rowspan="1">1690798354059</td><td rowspan="1">2365</td></tr><tr class="passedeven"><td><a href="#m6">do_issued</a></td><td rowspan="1">1690798391918</td><td rowspan="1">23954</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">PageObjectModel.Main</td><td><a href="#m0">url</a></td><td rowspan="1">1709021260108</td><td rowspan="1">22</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">PageObjectModel.LoginPage#credentialsLoginPage</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">PageObjectModel.Main#url</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">Sales_Module.DeliveryOrder#after_Add_Do_view</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">Sales_Module.DeliveryOrder#deliveryOrder_add_page</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">Sales_Module.DeliveryOrder#deliveryOrder_edit_page</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">Sales_Module.DeliveryOrder#deliveryOrder_view_page</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">Sales_Module.DeliveryOrder#do_issued</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">PageObjectModel.Main#url</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;Singleton.SingletonDriver.driver&quot; is null
+	at PageObjectModel.Main.url(Main.java:27)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
